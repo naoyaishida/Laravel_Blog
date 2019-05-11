@@ -20,12 +20,12 @@ Route::get('upload',[
     'as'=> 'upload'
 ]);
 
-Route::get('/upload/create',[
+Route::get('upload/create',[
     'uses'=>'UploadController@create',
     'as' => 'create'
 ]);
 
-Route::post('/upload',[
+Route::post('upload',[
     'uses'=>'UploadController@store',
     'as' => 'store'
 ]);
@@ -46,13 +46,20 @@ Route::any('upload/show/{id}',[
 // ]);
 
 Route::name('update')->put('/update/{id}','UploadController@update');
+    
 
 // Route::any('upload/show/{id}',[
 //     'uses'=>'UploadController@destroy',
 //     'as' => 'delete'
 // ]);
 
-// したのがあってた！
-Route::name('delete')->delete('/upload/{id}','UploadController@destroy');
+// したのがあってた！ 更にしたのでもいける
+// Route::name('delete')->delete('/upload/{id}','UploadController@destroy');
+
+Route::delete('upload/{id}',[
+    'uses' =>'UploadController@destroy',
+    'as' => 'delete']
+);
+
 
 

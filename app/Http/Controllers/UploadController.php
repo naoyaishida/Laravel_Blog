@@ -42,7 +42,7 @@ class UploadController extends Controller
         $this->validate($request,[
             'title' => 'required',
             'content'=> 'required',
-            // イメーぞだけ
+            // イメージだけいれられるように
             'image'=> 'required|image',
         ]);
 
